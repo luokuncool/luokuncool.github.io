@@ -1155,6 +1155,9 @@ pre .javascript .function {
   .post-body .highlight .gutter pre {
     padding-right: 10px;
   }
+  .post-body .highlight {
+    padding: 0;
+  }
 }
 @media (min-width: 992px) {
   .posts-expand .post-body {
@@ -1681,7 +1684,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff86;
+  background: #ff1de3;
 }
 .links-of-blogroll {
   font-size: 13px;

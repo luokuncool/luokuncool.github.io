@@ -244,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://luokuncool.github.io/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/">
+  <link itemprop="mainEntityOfPage" href="http://luokuncool.github.io/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -269,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" itemprop="url">
-                  开发symfony应用必备的phpstorm插件
+                <a class="post-title-link" href="/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/" itemprop="url">
+                  cURL error 60: SSL certificate problem: unable to get local issuer certificate
                 </a>
               
             
@@ -300,8 +300,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" itemprop="commentCount"></span>
+                <a href="/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -329,12 +329,12 @@
       
         
           
-            <h1 id="Symfony-Plugin"><a href="#Symfony-Plugin" class="headerlink" title="Symfony Plugin"></a>Symfony Plugin</h1><p>打开phpstorm的插件管理界面搜索<code>symfony plugin</code>，然后点击安装安装完成后重启phpstorm  </p>
-<p><img src="/images/20161117/gif1.gif" alt=""></p>
-<p>重启完成以后, 你就会发现神奇的代码提示粗现啦, just like image below  </p>
-<p><img src="/images/20161117/gif2.gif" alt=""></p>
-<h1 id="php-annotations"><a href="#php-annotations" class="headerlink" title="php annotations"></a>php annotations</h1><p>如上面一样搜索到<code>php annotations</code>，然后安装后重启phpstorm, 神奇的提示又有了，并且还是在注释里面哦</p>
-<p><img src="/images/20161117/gif3.gif" alt=""></p>
+            <p>执行<code>symfony demo</code>的时候得到错误信息<code>cURL error 60: SSL certificate problem: unable to get local issuer certificate</code><br>解决办法:  </p>
+<ul>
+<li>把这个<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="external">http://curl.haxx.se/ca/cacert.pem</a> 连接里面的内容保存到<code>cacert.pem</code>文件。</li>
+<li>修改<code>php.ini</code>把<code>curl.cainfo = &quot;cacert.pem的路径&quot;</code></li>
+<li>再执行<code>symfony demo</code> 问题解决了</li>
+</ul>
 
           
         
