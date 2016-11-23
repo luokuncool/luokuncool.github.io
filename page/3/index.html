@@ -244,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://luokuncool.github.io/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/">
+  <link itemprop="mainEntityOfPage" href="http://luokuncool.github.io/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -269,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/" itemprop="url">
-                  cURL error 60: SSL certificate problem: unable to get local issuer certificate
+                <a class="post-title-link" href="/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/" itemprop="url">
+                  联想g450 ubuntu无法上wifi
                 </a>
               
             
@@ -300,8 +300,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/" itemprop="commentCount"></span>
+                <a href="/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -329,12 +329,11 @@
       
         
           
-            <p>执行<code>symfony demo</code>的时候得到错误信息<code>cURL error 60: SSL certificate problem: unable to get local issuer certificate</code><br>解决办法:  </p>
-<ul>
-<li>把这个<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="external">http://curl.haxx.se/ca/cacert.pem</a> 连接里面的内容保存到<code>cacert.pem</code>文件。</li>
-<li>修改<code>php.ini</code>把<code>curl.cainfo = &quot;cacert.pem的路径&quot;</code></li>
-<li>再执行<code>symfony demo</code> 问题解决了</li>
-</ul>
+            <p>Broadcom BCM4312 802.11b/g LP-PHY<br>You only need the missing firmware:<br>Code:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install firmware-b43-lpphy-installer</div></pre></td></tr></table></figure></p>
+<hr>
+<p>Remove the STA driver and its config, if applicable:<br>Code:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove --purge bcmwl-kernel-source</div><div class="line">sudo rm /etc/modprobe.d/blacklist-bcm43.conf</div><div class="line">sudo rm /etc/modprobe.d/broadcom-sta-common.conf</div><div class="line">sudo rm /etc/modprobe.d/broadcom-sta-dkms.conf</div></pre></td></tr></table></figure></p>
+<p>Reboot.</p>
+<p><a href="http://ubuntuforums.org/showthread.php?t=2170117" target="_blank" rel="external">http://ubuntuforums.org/showthread.php?t=2170117</a></p>
 
           
         
