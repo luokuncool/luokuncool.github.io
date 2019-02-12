@@ -1,0 +1,769 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="VtT1cuSOxfqqYAyFSEXC-36r-JA1kgujYcLvACEkBiw" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ShadowSocks,科学上网," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言干技术的同行都知道，工作中遇到的好多问题都能通过Google搜索到解决方案。   但是比较坑爹的是由于gfw的存在，大陆根本访问不到Google。  但是这根本困不住我们的技术大牛些， 他们给自己开发了个可以穿过gfw的软件，也就是ShadowSocks(以下简称SS)。这个软件分为服务端和客户端，我们要用的大多数情况下只是客户端。 安装配置SS账号SS账号有两个途径获得，一个嘛就是自己搭建一">
+<meta name="keywords" content="ShadowSocks,科学上网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows科学上网">
+<meta property="og:url" content="https://luokuncool.pw/2016/11/24/cross-the-gfw-on-windows/index.html">
+<meta property="og:site_name" content="诚实的小猴子">
+<meta property="og:description" content="前言干技术的同行都知道，工作中遇到的好多问题都能通过Google搜索到解决方案。   但是比较坑爹的是由于gfw的存在，大陆根本访问不到Google。  但是这根本困不住我们的技术大牛些， 他们给自己开发了个可以穿过gfw的软件，也就是ShadowSocks(以下简称SS)。这个软件分为服务端和客户端，我们要用的大多数情况下只是客户端。 安装配置SS账号SS账号有两个途径获得，一个嘛就是自己搭建一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124174335.png">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124181041.png">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124175527.png">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124181639.png">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124182136.png">
+<meta property="og:image" content="https://luokuncool.pw/images/2016-11-24%2020-36-14.png">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124163600.png">
+<meta property="og:image" content="https://luokuncool.pw/images/20161124165012.png">
+<meta property="og:updated_time" content="2018-03-02T09:24:49.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows科学上网">
+<meta name="twitter:description" content="前言干技术的同行都知道，工作中遇到的好多问题都能通过Google搜索到解决方案。   但是比较坑爹的是由于gfw的存在，大陆根本访问不到Google。  但是这根本困不住我们的技术大牛些， 他们给自己开发了个可以穿过gfw的软件，也就是ShadowSocks(以下简称SS)。这个软件分为服务端和客户端，我们要用的大多数情况下只是客户端。 安装配置SS账号SS账号有两个途径获得，一个嘛就是自己搭建一">
+<meta name="twitter:image" content="https://luokuncool.pw/images/20161124174335.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://luokuncool.pw/2016/11/24/cross-the-gfw-on-windows/"/>
+
+
+<link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.css" rel="stylesheet">
+
+<link rel="icon" href="/images/icon.png"/>
+<link rel="apple-touch-icon" href="/images/icon.png"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+
+  <title> Windows科学上网 | 诚实的小猴子 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-87685613-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="site-title">诚实的小猴子</span>
+    </a>
+  </div>
+  <p class="site-subtitle">Hey man, just code it!!!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/24/cross-the-gfw-on-windows/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="诚实的小猴子">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="诚实的小猴子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="诚实的小猴子" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Windows科学上网
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-24T18:27:19+08:00">
+                2016-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>干技术的同行都知道，工作中遇到的好多问题都能通过Google搜索到解决方案。  </p>
+<p>但是比较坑爹的是由于gfw的存在，大陆根本访问不到Google。 </p>
+<p>但是这根本困不住我们的技术大牛些， 他们给自己开发了个可以穿过gfw的软件，也就是ShadowSocks(以下简称SS)。这个软件分为服务端和客户端，我们要用的大多数情况下只是客户端。</p>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="SS账号"><a href="#SS账号" class="headerlink" title="SS账号"></a>SS账号</h3><p>SS账号有两个途径获得，一个嘛就是自己搭建一个SS服务器，然后自然而然就有账号了。要搭建SS服务器必须要有个自己的非大陆的服务器，然后在上面安装SS的服务端。这个嘛并不建议这么干，因为组个服务器贵啊，建SS太浪费了，虽说有便宜的，但是便宜的速度又不行。</p>
+<p>另一个就是在服务商那里买个SS账号，我买的一个账号120一年，一个月30G流量，包括20多台服务器节点，不过我只用了一台香港的，速度飞快，看YouTube的720p视频无压力。</p>
+<p>至于SS服务商这里就不贴连接出来了，因为老是被封，换了n个域名了，自己去百度搜索吧。</p>
+<h3 id="SS客户端安装"><a href="#SS客户端安装" class="headerlink" title="SS客户端安装"></a>SS客户端安装</h3><p>点<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">下载链接</a>下载SS客户端，下载下来解压启动就是了。</p>
+<p>如果启动不起，基本上就是没有安装<a href="https://www.baidu.com/s?wd=.net%20framework%204.0&amp;rsv_spt=1&amp;rsv_iqid=0x8455a7f400005761&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=cn&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;oq=npm&amp;rsv_t=2439rIAKIwx4rky9PNtLB4DMlZoQ9N8ocsYGT3SMGTJfvdmawCrpVCWTlllVvs0sZXlX&amp;inputT=1588&amp;rsv_pq=bcf76b02000066a4&amp;rsv_sug3=11&amp;rsv_sug1=6&amp;rsv_sug7=100&amp;bs=npm" target="_blank" rel="noopener">.net framework 4.0</a>再去下载个<a href="https://www.baidu.com/s?wd=.net%20framework%204.0&amp;rsv_spt=1&amp;rsv_iqid=0x8455a7f400005761&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=cn&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;oq=npm&amp;rsv_t=2439rIAKIwx4rky9PNtLB4DMlZoQ9N8ocsYGT3SMGTJfvdmawCrpVCWTlllVvs0sZXlX&amp;inputT=1588&amp;rsv_pq=bcf76b02000066a4&amp;rsv_sug3=11&amp;rsv_sug1=6&amp;rsv_sug7=100&amp;bs=npm" target="_blank" rel="noopener">.net framework 4.0</a>安装好就可以了。</p>
+<p><img src="/images/20161124174335.png" alt="ss配置"></p>
+<p>启动起来以后把ss账号的相关信息填写到客户端里面，就可以了。</p>
+<h3 id="安装SwitchyOmega插件"><a href="#安装SwitchyOmega插件" class="headerlink" title="安装SwitchyOmega插件"></a>安装SwitchyOmega插件</h3><p>点击<a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="noopener">下载链接</a>下载SwitchyOmega。</p>
+<p>下载<code>SwitchyOmega.crx</code>，别下载到<code>tar.gz</code>, <code>zip</code>了，那个是源码。</p>
+<p>如果是用chrome下载的，会直接提示安装，如果是其它下载的则打开chrome打开菜单<code>更多工具</code>-&gt;<code>扩展程序</code>， 然后用鼠标把<code>SwitchyOmega.crx</code>拖到chrome里面就会安装了。</p>
+<p><img src="/images/20161124181041.png" alt=""></p>
+<blockquote>
+<p>下面所有的设置记住要点左下角那个应用选项哈</p>
+</blockquote>
+<p>安装好以后点chrome右上角那个小圈圈，进入到设置页面。情景模式设置一个shadowsocks把服务器设置为localhost，协议socks5，端口1080</p>
+<p><img src="/images/20161124175527.png" alt=""></p>
+<p>然后再点那个圆圈圈选择刚刚添加的shadowsocks情景模式就可以，上谷歌了。</p>
+<p>但是~ 现在浏览网页所有的网站都会走代理，包括国内的网站，这些网站走代理其实要慢得多。</p>
+<p>所以~ 看到截图那里那个auto switch 了吧，这个就是让你想走代理的网站走代理，不走的就直接连接</p>
+<p><img src="/images/20161124181639.png" alt=""></p>
+<p>现在再来新增一个情景模式，类型选择自动切换，设置如下红框圈出来的地方。</p>
+<p>规则列表网址<code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</code>, 填了规则列表网址点一下立即更新情景模式。</p>
+<p><img src="/images/20161124182136.png" alt=""></p>
+<p>这个新增好以后，又点击右上角的小圈圈，把情景模式设置成<code>auto switch</code>，现在浏览网页的时候大多数被墙了的网站都会走代理了。当遇到访问比较慢的没有被墙的国外网站，也可以点击右上角的小圈圈，然后点<code>添加规则</code>，情景模式选择<code>shadowsocks</code>，然后访问这个网址就是走代理了，速度飞起来。</p>
+<p><img src="/images/2016-11-24 20-36-14.png" alt=""></p>
+<h3 id="安装Proxifier"><a href="#安装Proxifier" class="headerlink" title="安装Proxifier"></a>安装Proxifier</h3><p>SS账号安装好了，浏览器是能顺利的翻墙上网了。</p>
+<p>但是做技术的朋友们经常会用的命令行，比如<a href="http://docs.phpcomposer.com/" target="_blank" rel="noopener">composer</a>, <a href="https://docs.npmjs.com/" target="_blank" rel="noopener">npm</a>之类的依赖管理工具。</p>
+<p>在使用这些工具安装依赖包的时候回遇到有些依赖库由于网络原因安装不起，虽然可以把镜像设置为国内的镜像，但是个人觉得并不是太靠谱，有的还是下载不下来。这时候就需要安装<code>proxifier</code>来让这些工具也走代理。</p>
+<p>点击<a href="https://www.baidu.com/s?wd=Proxifier&amp;rsv_spt=1&amp;rsv_iqid=0xac11c3ce0002b131&amp;issp=1&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=2&amp;ie=utf-8&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;rsv_sug3=3&amp;rsv_n=2" target="_blank" rel="noopener">下载链接</a>把<code>proxifier</code>下载下来之后，一步步安装起，接着启动。</p>
+<p><img src="/images/20161124163600.png" alt="proxifier配置"></p>
+<p>点菜单<code>配置文件</code>-&gt;<code>代理服务器</code>-&gt;<code>添加</code>, 地址填localhost，端口填1080(默认是这个和上面那个SS本地端口一致)，类型选<code>SOCKS5</code>。</p>
+<p><img src="/images/20161124165012.png" alt=""></p>
+<p>服务器配置好以后，再配置代理规则，点菜单<code>配置文件</code>-&gt;<code>代理规则</code>，规则列表里面默认有一条default, 把default规则那一栏设置成刚刚配置的那个代理服务器。</p>
+<h2 id="开始穿墙"><a href="#开始穿墙" class="headerlink" title="开始穿墙"></a>开始穿墙</h2><ul>
+<li><a href="https://www.google.com.hk" target="_blank" rel="noopener">Google</a></li>
+<li><a href="https://www.youtube.com/?gl=HK" target="_blank" rel="noopener">YouTube</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ShadowSocks/" rel="tag"># ShadowSocks</a>
+          
+            <a href="/tags/科学上网/" rel="tag"># 科学上网</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/23/es6-feature-top12/" rel="next" title="ES6 的 12 个核心功能一览">
+                <i class="fa fa-chevron-left"></i> ES6 的 12 个核心功能一览
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/01/install-composer/" rel="prev" title="安装Composer">
+                安装Composer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+          <div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="诚实的小猴子" />
+          <p class="site-author-name" itemprop="name">诚实的小猴子</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-number">2.</span> <span class="nav-text">安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SS账号"><span class="nav-number">2.1.</span> <span class="nav-text">SS账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS客户端安装"><span class="nav-number">2.2.</span> <span class="nav-text">SS客户端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装SwitchyOmega插件"><span class="nav-number">2.3.</span> <span class="nav-text">安装SwitchyOmega插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Proxifier"><span class="nav-number">2.4.</span> <span class="nav-text">安装Proxifier</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始穿墙"><span class="nav-number">3.</span> <span class="nav-text">开始穿墙</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">诚实的小猴子</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script
+    type="text/javascript">
+var gitalk = new Gitalk({
+    clientID: '08c30a9aaaa97034937b',
+    clientSecret: '3817a221fb13f1bf89be79429047753c53f330c9',
+    repo: 'luokuncool.github.io',
+    owner: 'luokuncool',
+    admin: ['luokuncool'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+document.getElementById('gitalk-container') && gitalk.render('gitalk-container')
+</script>
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+
+  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+  NexT.utils.addActiveClassToMenuItem();
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+
+  undefined === ga || ga('send', 'pageview');
+});
+</script>
+
+</body>
+</html>

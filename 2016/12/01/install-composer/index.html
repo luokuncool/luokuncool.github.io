@@ -1,0 +1,754 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="VtT1cuSOxfqqYAyFSEXC-36r-JA1kgujYcLvACEkBiw" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,Composer," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="原文地址：http://docs.phpcomposer.com/00-intro.html#System-Requirements  系统要求运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。 我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取">
+<meta name="keywords" content="PHP,Composer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Composer">
+<meta property="og:url" content="https://luokuncool.pw/2016/12/01/install-composer/index.html">
+<meta property="og:site_name" content="诚实的小猴子">
+<meta property="og:description" content="原文地址：http://docs.phpcomposer.com/00-intro.html#System-Requirements  系统要求运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。 我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-02T09:24:49.615Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Composer">
+<meta name="twitter:description" content="原文地址：http://docs.phpcomposer.com/00-intro.html#System-Requirements  系统要求运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。 我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://luokuncool.pw/2016/12/01/install-composer/"/>
+
+
+<link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.css" rel="stylesheet">
+
+<link rel="icon" href="/images/icon.png"/>
+<link rel="apple-touch-icon" href="/images/icon.png"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+
+  <title> 安装Composer | 诚实的小猴子 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-87685613-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div id="pjax-container" class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="site-title">诚实的小猴子</span>
+    </a>
+  </div>
+  <p class="site-subtitle">Hey man, just code it!!!</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/12/01/install-composer/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="诚实的小猴子">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="诚实的小猴子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="诚实的小猴子" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                安装Composer
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-01T17:30:09+08:00">
+                2016-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>原文地址：<a href="http://docs.phpcomposer.com/00-intro.html#System-Requirements" target="_blank" rel="noopener">http://docs.phpcomposer.com/00-intro.html#System-Requirements</a></p>
+</blockquote>
+<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>运行 Composer 需要 PHP 5.3.2+ 以上版本。一些敏感的 PHP 设置和编译标志也是必须的，但对于任何不兼容项安装程序都会抛出警告。</p>
+<p>我们将从包的来源直接安装，而不是简单的下载 zip 文件，你需要 git 、 svn 或者 hg ，这取决于你载入的包所使用的版本管理系统。</p>
+<p>Composer 是多平台的，我们努力使它在 Windows 、 Linux 以及 OSX 平台上运行的同样出色。</p>
+<h2 id="安装-nix"><a href="#安装-nix" class="headerlink" title="安装 - *nix"></a>安装 - *nix</h2><h3 id="下载-Composer-的可执行文件"><a href="#下载-Composer-的可执行文件" class="headerlink" title="下载 Composer 的可执行文件"></a>下载 Composer 的可执行文件</h3><h4 id="局部安装"><a href="#局部安装" class="headerlink" title="局部安装"></a>局部安装</h4><p>要真正获取 Composer，我们需要做两件事。首先安装 Composer （同样的，这意味着它将下载到你的项目中）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://getcomposer.org/installer | php</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意： 如果上述方法由于某些原因失败了，你还可以通过 <code>php</code> &gt;下载安装器：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -r <span class="string">"readfile('https://getcomposer.org/installer');"</span> | php</span><br></pre></td></tr></table></figure>
+<p>这将检查一些 PHP 的设置，然后下载 composer.phar 到你的工作目录中。这是 Composer 的二进制文件。这是一个 PHAR 包（PHP 的归档），这是 PHP 的归档格式可以帮助用户在命令行中执行一些操作。</p>
+<p>你可以通过 –install-dir 选项指定 Composer 的安装目录（它可以是一个绝对或相对路径）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://getcomposer.org/installer | php -- --install-dir=bin</span><br></pre></td></tr></table></figure>
+<h4 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h4><p>你可以将此文件放在任何地方。如果你把它放在系统的 PATH 目录中，你就能在全局访问它。 在类Unix系统中，你甚至可以在使用时不加<code>php</code>前缀。</p>
+<p>你可以执行这些命令让 <code>composer</code> 在你的系统中进行全局调用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://getcomposer.org/installer | php</span><br><span class="line">mv composer.phar /usr/<span class="built_in">local</span>/bin/composer</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意： 如果上诉命令因为权限执行失败， 请使用 sudo 再次尝试运行 <code>mv</code> 那行命令。</p>
+</blockquote>
+<p>现在只需要运行 <code>composer</code> 命令就可以使用 Composer 而不需要输入 <code>php composer.phar</code>。</p>
+<h4 id="全局安装-on-OSX-via-homebrew"><a href="#全局安装-on-OSX-via-homebrew" class="headerlink" title="全局安装 (on OSX via homebrew)"></a>全局安装 (on OSX via homebrew)</h4><p>Composer 是 homebrew-php 项目的一部分。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew tap josegonzalez/homebrew-php</span><br><span class="line">brew tap homebrew/versions</span><br><span class="line">brew install php55-intl</span><br><span class="line">brew install josegonzalez/php/composer</span><br></pre></td></tr></table></figure>
+<h2 id="安装-Windows"><a href="#安装-Windows" class="headerlink" title="安装 - Windows"></a>安装 - Windows</h2><h3 id="使用安装程序"><a href="#使用安装程序" class="headerlink" title="使用安装程序"></a>使用安装程序</h3><p>这是将 Composer 安装在你机器上的最简单的方法。</p>
+<p>下载并且运行 <a href="https://getcomposer.org/Composer-Setup.exe" target="_blank" rel="noopener">Composer-Setup.exe</a>，它将安装最新版本的 Composer ，并设置好系统的环境变量，因此你可以在任何目录下直接使用 <code>composer</code> 命令。</p>
+<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p>设置系统的环境变量 <code>PATH</code> 并运行安装命令下载 <code>composer.phar</code> 文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\username&gt;<span class="built_in">cd</span> C:\bin</span><br><span class="line">C:\bin&gt;php -r <span class="string">"readfile('https://getcomposer.org/installer');"</span> | php</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意： 如果收到 readfile 错误提示，请使用 <code>http</code> 链接或者在 php.ini 中开启 <code>php_openssl.dll</code> 。</p>
+</blockquote>
+<p>在 <code>composer.phar</code> 同级目录下新建文件 <code>composer.bat</code> ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\bin&gt;<span class="built_in">echo</span> @php <span class="string">"%~dp0composer.phar"</span> %*&gt;composer.bat</span><br></pre></td></tr></table></figure>
+<p>关闭当前的命令行窗口，打开新的命令行窗口进行测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\username&gt;composer -V</span><br><span class="line">Composer version 27d8904</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+            <a href="/tags/Composer/" rel="tag"># Composer</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/24/cross-the-gfw-on-windows/" rel="next" title="Windows科学上网">
+                <i class="fa fa-chevron-left"></i> Windows科学上网
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/08/learn-laravel-container/" rel="prev" title="laravel 学习笔记 —— 神奇的服务容器">
+                laravel 学习笔记 —— 神奇的服务容器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+          <div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="诚实的小猴子" />
+          <p class="site-author-name" itemprop="name">诚实的小猴子</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统要求"><span class="nav-number">1.</span> <span class="nav-text">系统要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-nix"><span class="nav-number">2.</span> <span class="nav-text">安装 - *nix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-Composer-的可执行文件"><span class="nav-number">2.1.</span> <span class="nav-text">下载 Composer 的可执行文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#局部安装"><span class="nav-number">2.1.1.</span> <span class="nav-text">局部安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局安装"><span class="nav-number">2.1.2.</span> <span class="nav-text">全局安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局安装-on-OSX-via-homebrew"><span class="nav-number">2.1.3.</span> <span class="nav-text">全局安装 (on OSX via homebrew)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Windows"><span class="nav-number">3.</span> <span class="nav-text">安装 - Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用安装程序"><span class="nav-number">3.1.</span> <span class="nav-text">使用安装程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">3.2.</span> <span class="nav-text">手动安装</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">诚实的小猴子</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script
+    type="text/javascript">
+var gitalk = new Gitalk({
+    clientID: '08c30a9aaaa97034937b',
+    clientSecret: '3817a221fb13f1bf89be79429047753c53f330c9',
+    repo: 'luokuncool.github.io',
+    owner: 'luokuncool',
+    admin: ['luokuncool'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+document.getElementById('gitalk-container') && gitalk.render('gitalk-container')
+</script>
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+  NexT.motion.integrator.cursor = -1;
+
+  $(document).trigger('bootstrap:before');
+
+  NexT.utils.isMobile() && window.FastClick.attach(document.body);
+
+  NexT.utils.lazyLoadPostsImages();
+
+  NexT.utils.registerBackToTop();
+
+  $('.site-nav-toggle button').on('click', function () {
+    var $siteNav = $('.site-nav');
+    var ON_CLASS_NAME = 'site-nav-on';
+    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
+    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
+    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
+
+    $siteNav.stop()[animateAction]('fast', function () {
+      $siteNav[animateCallback](ON_CLASS_NAME);
+    });
+  });
+
+  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
+  NexT.utils.embeddedVideoTransformer();
+  NexT.utils.addActiveClassToMenuItem();
+
+  $(document).trigger('motion:before');
+
+  NexT.motion.init();
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
+  $(document).trigger('bootstrap:after');
+
+  undefined === ga || ga('send', 'pageview');
+});
+</script>
+
+</body>
+</html>
