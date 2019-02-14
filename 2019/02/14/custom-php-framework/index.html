@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://luokuncool.pw/images/20190124/100048.png">
 <meta property="og:image" content="https://luokuncool.pw/images/20190124/100357.png">
-<meta property="og:updated_time" content="2019-02-14T09:02:45.081Z">
+<meta property="og:updated_time" content="2019-02-14T09:19:16.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嗯！我自己写（东拼西凑）了个&quot;框架&quot;">
 <meta name="twitter:description" content="为什么要自己「写」框架？我们都知道在 github 有很多优秀的开源项目，有的项目是专注于某一项事情的库。比如某某项目是一个 HTTP 客户端，某某项目是一个处理图片的库，某某项目是一个模板引擎等等。它们在自己所处领域都是非常优秀的，于是我奔着学习使用这些库的目的，挑选自己喜欢的把他们组成一个简易的自定义框架。 框架的构成一个完善的框架有很多特性，现在我准备取一些基础必须的来一个个拆解，并选择我喜">
@@ -344,7 +344,7 @@
 <li>配置文件加载</li>
 <li>调试</li>
 </ul>
-<h2 id="元件组装"><a href="#元件组装" class="headerlink" title="元件组装"></a>元件组装</h2><h3 id="IOC容器php-di-php-di"><a href="#IOC容器php-di-php-di" class="headerlink" title="IOC容器php-di/php-di"></a>IOC容器<code>php-di/php-di</code></h3><p>框架存在的目的是为了让我们更方便的来开发我们的项目，让我们更容易的写出松耦合便于维护的代码。要起到解耦合作用框架常常是采用的一个依赖注入容器来处理。不管是大名鼎鼎的 <code>spring</code> 还是我们的 <code>laravel</code> 都是这样。所以我来到 <a href="https://packagist.org/" target="_blank" rel="noopener">packagist.org</a> 找对应的扩展包。分别看了排名前几个的最终挑选了 <code>php-di</code> 。它吸引的地方是容易上手，并且可以通过注解的方式来注入对象，非常方便。</p>
+<h2 id="元件组装"><a href="#元件组装" class="headerlink" title="元件组装"></a>元件组装</h2><h3 id="IOC容器php-di-php-di"><a href="#IOC容器php-di-php-di" class="headerlink" title="IOC容器php-di/php-di"></a>IOC容器<code>php-di/php-di</code></h3><p>框架存在的目的是为了让我们更方便的来开发我们的项目，让我们更容易的写出松耦合便于维护的代码。要起到解耦合作用框架常常是采用的一个依赖注入容器来处理。不管是大名鼎鼎的 <code>spring</code> 还是我们的 <code>laravel</code> 都是这样。所以我来到 <a href="https://packagist.org/" target="_blank" rel="noopener">packagist.org</a> 找对应的扩展包。分别看了排名前几个的最终挑选了 <code>php-di</code> 。它吸引我的地方是容易上手，并且可以通过注解的方式来注入对象，非常方便。</p>
 <p><img src="https://luokuncool.pw/images/20190124/100048.png" alt="php-di"></p>
 <ul>
 <li>创建容器</li>
