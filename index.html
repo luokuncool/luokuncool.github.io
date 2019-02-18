@@ -688,7 +688,7 @@
 </tr>
 </tbody>
 </table>
-<p><code>LightControl::KITCHEN &amp;#124; LightControl::DINING_ROOM</code>的值为<code>0b10100</code>，第2、4位（也就是厨房灯、客厅灯）都是1，选择打开了厨房灯、客厅灯。</p>
+<p><code>LightControl::KITCHEN | LightControl::DINING_ROOM</code>的值为<code>0b10100</code>，第2、4位（也就是厨房灯、客厅灯）都是1，选择打开了厨房灯、客厅灯。</p>
 <p>可以看到用位操作以后可以灵活的控制灯了，如果要开的灯太多可以用排除法，要开的少可以用选择法。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
 <p>当需要用一个参数来控制众多只有true、false选项的时候可以考虑用到位运算来实现，可以用来简化参数的传递并且更为灵活。</p>
