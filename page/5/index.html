@@ -252,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/ubuntuxia-wu-fa-phpstormwu-fa-shu-ru-zhong-wen-wen-ti/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -277,8 +277,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" itemprop="url">
-                  开发symfony应用必备的phpstorm插件
+                <a class="post-title-link" href="/2016/11/21/ubuntuxia-wu-fa-phpstormwu-fa-shu-ru-zhong-wen-wen-ti/" itemprop="url">
+                  ubuntu下无法phpstorm无法输入中文问题
                 </a>
               
             
@@ -332,12 +332,9 @@
       
         
           
-            <h2 id="Symfony-Plugin"><a href="#Symfony-Plugin" class="headerlink" title="Symfony Plugin"></a>Symfony Plugin</h2><p>打开phpstorm的插件管理界面搜索<code>symfony plugin</code>，然后点击安装安装完成后重启phpstorm  </p>
-<p><img src="/images/20161117/gif1.gif" alt=""></p>
-<p>重启完成以后, 你就会发现神奇的代码提示粗现啦, just like image below  </p>
-<p><img src="/images/20161117/gif2.gif" alt=""></p>
-<h2 id="php-annotations"><a href="#php-annotations" class="headerlink" title="php annotations"></a>php annotations</h2><p>如上面一样搜索到<code>php annotations</code>，然后安装后重启phpstorm, 神奇的提示又有了，并且还是在注释里面哦</p>
-<p><img src="/images/20161117/gif3.gif" alt=""></p>
+            <p>首先在<code>~/.xinitrc</code>里面加入以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br></pre></td></tr></table></figure></p>
+<p>然后在phpstorm.sh的顶部加上以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XMODIFIERS=&quot;@im=fcitx&quot;</span><br><span class="line">export XMODIFIERS</span><br></pre></td></tr></table></figure></p>
+<p>再重启phpstorm就可以输入中文啦</p>
 
           
         
@@ -1102,51 +1099,6 @@ document.getElementById('gitalk-container') && gitalk.render('gitalk-container')
 
   
 
-  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-<script type="text/javascript">
-$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
-$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
-$(document).on('pjax:complete', function () {
-  NexT.motion.integrator.cursor = -1;
-
-  $(document).trigger('bootstrap:before');
-
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
-
-  NexT.utils.lazyLoadPostsImages();
-
-  NexT.utils.registerBackToTop();
-
-  $('.site-nav-toggle button').on('click', function () {
-    var $siteNav = $('.site-nav');
-    var ON_CLASS_NAME = 'site-nav-on';
-    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
-    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
-    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
-
-    $siteNav.stop()[animateAction]('fast', function () {
-      $siteNav[animateCallback](ON_CLASS_NAME);
-    });
-  });
-
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  NexT.utils.embeddedVideoTransformer();
-  NexT.utils.addActiveClassToMenuItem();
-
-  $(document).trigger('motion:before');
-
-  NexT.motion.init();
-  if (CONFIG.motion) {
-    $('.archive-year').velocity('transition.slideLeftIn');
-    CONFIG.motion && NexT.motion.integrator.bootstrap();
-  }
-  NexT.postDetails.init();
-  $(document).trigger('bootstrap:after');
-
-  undefined === ga || ga('send', 'pageview');
-});
-</script>
 
 </body>
 </html>

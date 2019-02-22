@@ -272,9 +272,46 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/11/21/symfonychuang-jian-fei-gong-xiang-fu-wu/" itemprop="url">
+            <a class="post-title-link" href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" itemprop="url">
               
-                <span itemprop="name">Symfony创建非共享服务</span>
+                <span itemprop="name">开发symfony应用必备的phpstorm插件</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-11-21T21:50:34+08:00"
+              content="2016-11-21" >
+          11-21
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+    
+
+      
+      
+      
+
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/" itemprop="url">
+              
+                <span itemprop="name">cURL error 60: SSL certificate problem: unable to get local issuer certificate</span>
               
             </a>
         
@@ -346,46 +383,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/" itemprop="url">
+            <a class="post-title-link" href="/2016/11/21/ubuntuxia-wu-fa-phpstormwu-fa-shu-ru-zhong-wen-wen-ti/" itemprop="url">
               
-                <span itemprop="name">联想g450 ubuntu无法上wifi</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-21T21:50:34+08:00"
-              content="2016-11-21" >
-          11-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" itemprop="url">
-              
-                <span itemprop="name">开发symfony应用必备的phpstorm插件</span>
+                <span itemprop="name">ubuntu下无法phpstorm无法输入中文问题</span>
               
             </a>
         
@@ -699,51 +699,6 @@ document.getElementById('gitalk-container') && gitalk.render('gitalk-container')
 
   
 
-  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-<script type="text/javascript">
-$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
-$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
-$(document).on('pjax:complete', function () {
-  NexT.motion.integrator.cursor = -1;
-
-  $(document).trigger('bootstrap:before');
-
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
-
-  NexT.utils.lazyLoadPostsImages();
-
-  NexT.utils.registerBackToTop();
-
-  $('.site-nav-toggle button').on('click', function () {
-    var $siteNav = $('.site-nav');
-    var ON_CLASS_NAME = 'site-nav-on';
-    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
-    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
-    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
-
-    $siteNav.stop()[animateAction]('fast', function () {
-      $siteNav[animateCallback](ON_CLASS_NAME);
-    });
-  });
-
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  NexT.utils.embeddedVideoTransformer();
-  NexT.utils.addActiveClassToMenuItem();
-
-  $(document).trigger('motion:before');
-
-  NexT.motion.init();
-  if (CONFIG.motion) {
-    $('.archive-year').velocity('transition.slideLeftIn');
-    CONFIG.motion && NexT.motion.integrator.bootstrap();
-  }
-  NexT.postDetails.init();
-  $(document).trigger('bootstrap:after');
-
-  undefined === ga || ga('send', 'pageview');
-});
-</script>
 
 </body>
 </html>

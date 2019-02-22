@@ -367,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/21/guan-yu-phpji-zhu-zhang-hao-mian-deng-lu-gong-neng/" rel="next" title="关于php记住帐号免登陆功能">
-                <i class="fa fa-chevron-left"></i> 关于php记住帐号免登陆功能
+              <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" rel="next" title="开发symfony应用必备的phpstorm插件">
+                <i class="fa fa-chevron-left"></i> 开发symfony应用必备的phpstorm插件
               </a>
             
           </div>
@@ -377,8 +377,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/" rel="prev" title="cURL error 60: SSL certificate problem: unable to get local issuer certificate">
-                cURL error 60: SSL certificate problem: unable to get local issuer certificate <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/" rel="prev" title="联想g450 ubuntu无法上wifi">
+                联想g450 ubuntu无法上wifi <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -648,51 +648,6 @@ document.getElementById('gitalk-container') && gitalk.render('gitalk-container')
 
   
 
-  <script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-<script type="text/javascript">
-$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
-$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
-$(document).on('pjax:complete', function () {
-  NexT.motion.integrator.cursor = -1;
-
-  $(document).trigger('bootstrap:before');
-
-  NexT.utils.isMobile() && window.FastClick.attach(document.body);
-
-  NexT.utils.lazyLoadPostsImages();
-
-  NexT.utils.registerBackToTop();
-
-  $('.site-nav-toggle button').on('click', function () {
-    var $siteNav = $('.site-nav');
-    var ON_CLASS_NAME = 'site-nav-on';
-    var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
-    var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
-    var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
-
-    $siteNav.stop()[animateAction]('fast', function () {
-      $siteNav[animateCallback](ON_CLASS_NAME);
-    });
-  });
-
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  NexT.utils.embeddedVideoTransformer();
-  NexT.utils.addActiveClassToMenuItem();
-
-  $(document).trigger('motion:before');
-
-  NexT.motion.init();
-  if (CONFIG.motion) {
-    $('.archive-year').velocity('transition.slideLeftIn');
-    CONFIG.motion && NexT.motion.integrator.bootstrap();
-  }
-  NexT.postDetails.init();
-  $(document).trigger('bootstrap:after');
-
-  undefined === ga || ga('send', 'pageview');
-});
-</script>
 
 </body>
 </html>
