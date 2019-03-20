@@ -63,7 +63,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,Symfony," />
+  <meta name="keywords" content="PHP,Symfony,PHPStorm," />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
-<meta name="keywords" content="PHP,Symfony">
+<meta name="description" content="Symfony Plugin打开phpstorm的插件管理界面搜索symfony plugin，然后点击安装安装完成后重启phpstorm    重启完成以后, 你就会发现神奇的代码提示粗现啦, just like image below    php annotations如上面一样搜索到php annotations，然后安装后重启phpstorm, 神奇的提示又有了，并且还是在注释里面哦">
+<meta name="keywords" content="PHP,Symfony,PHPStorm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Symfony创建非共享服务">
-<meta property="og:url" content="https://luokuncool.pw/2016/11/21/symfony-dev-plugins/index.html">
+<meta property="og:title" content="开发symfony应用必备的phpstorm插件">
+<meta property="og:url" content="https://luokuncool.pw/2016/11/21/symfony-dev-phpstorm-plugin/index.html">
 <meta property="og:site_name" content="诚实的小猴子">
-<meta property="og:description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
+<meta property="og:description" content="Symfony Plugin打开phpstorm的插件管理界面搜索symfony plugin，然后点击安装安装完成后重启phpstorm    重启完成以后, 你就会发现神奇的代码提示粗现啦, just like image below    php annotations如上面一样搜索到php annotations，然后安装后重启phpstorm, 神奇的提示又有了，并且还是在注释里面哦">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T09:24:49.619Z">
+<meta property="og:image" content="https://luokuncool.pw/images/20161117/gif1.gif">
+<meta property="og:image" content="https://luokuncool.pw/images/20161117/gif2.gif">
+<meta property="og:image" content="https://luokuncool.pw/images/20161117/gif3.gif">
+<meta property="og:updated_time" content="2018-03-02T09:24:49.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Symfony创建非共享服务">
-<meta name="twitter:description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
+<meta name="twitter:title" content="开发symfony应用必备的phpstorm插件">
+<meta name="twitter:description" content="Symfony Plugin打开phpstorm的插件管理界面搜索symfony plugin，然后点击安装安装完成后重启phpstorm    重启完成以后, 你就会发现神奇的代码提示粗现啦, just like image below    php annotations如上面一样搜索到php annotations，然后安装后重启phpstorm, 神奇的提示又有了，并且还是在注释里面哦">
+<meta name="twitter:image" content="https://luokuncool.pw/images/20161117/gif1.gif">
 
 
 
@@ -118,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/symfony-dev-plugins/"/>
+  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/symfony-dev-phpstorm-plugin/"/>
 
 
 <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.css" rel="stylesheet">
@@ -127,7 +131,7 @@
 <link rel="apple-touch-icon" href="/images/icon.png"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 
-  <title> Symfony创建非共享服务 | 诚实的小猴子 </title>
+  <title> 开发symfony应用必备的phpstorm插件 | 诚实的小猴子 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/symfony-dev-plugins/">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/symfony-dev-phpstorm-plugin/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -279,7 +283,7 @@
             
             
               
-                Symfony创建非共享服务
+                开发symfony应用必备的phpstorm插件
               
             
           </h1>
@@ -330,9 +334,12 @@
       
 
       
-        <p>在syfmony服务容器中，所有的服务默认都是共享的。<br>也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。<br>要每次都获取新的实例, 只要在services配置文件里面设置 <code>shared</code>为 <code>false</code>就可以了:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app/config/services.yml</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">    <span class="string">app.some_not_shared_service:</span></span><br><span class="line"><span class="attr">        class:</span> <span class="string">...</span></span><br><span class="line"><span class="attr">        shared:</span> <span class="literal">false</span></span><br><span class="line">        <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
-<p>现在不管什么时候，调用<code>$container-&gt;get(&#39;app.some_not_shared_service&#39;)</code>或者注入这个服务，你每次都将获取一个新的实例。</p>
+        <h2 id="Symfony-Plugin"><a href="#Symfony-Plugin" class="headerlink" title="Symfony Plugin"></a>Symfony Plugin</h2><p>打开phpstorm的插件管理界面搜索<code>symfony plugin</code>，然后点击安装安装完成后重启phpstorm  </p>
+<p><img src="/images/20161117/gif1.gif" alt=""></p>
+<p>重启完成以后, 你就会发现神奇的代码提示粗现啦, just like image below  </p>
+<p><img src="/images/20161117/gif2.gif" alt=""></p>
+<h2 id="php-annotations"><a href="#php-annotations" class="headerlink" title="php annotations"></a>php annotations</h2><p>如上面一样搜索到<code>php annotations</code>，然后安装后重启phpstorm, 神奇的提示又有了，并且还是在注释里面哦</p>
+<p><img src="/images/20161117/gif3.gif" alt=""></p>
 
       
     </div>
@@ -360,6 +367,8 @@
           
             <a href="/tags/Symfony/" rel="tag"># Symfony</a>
           
+            <a href="/tags/PHPStorm/" rel="tag"># PHPStorm</a>
+          
         </div>
       
 
@@ -367,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/21/ubuntu-phpstorm-chinese-input/" rel="next" title="ubuntu下无法phpstorm无法输入中文问题">
-                <i class="fa fa-chevron-left"></i> ubuntu下无法phpstorm无法输入中文问题
+              <a href="/2016/11/21/curl-error-60/" rel="next" title="cURL error 60: SSL certificate problem: unable to get local issuer certificate">
+                <i class="fa fa-chevron-left"></i> cURL error 60: SSL certificate problem: unable to get local issuer certificate
               </a>
             
           </div>
@@ -377,8 +386,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" rel="prev" title="开发symfony应用必备的phpstorm插件">
-                开发symfony应用必备的phpstorm插件 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/21/ubuntu-phpstorm-chinese-input/" rel="prev" title="ubuntu下无法phpstorm无法输入中文问题">
+                ubuntu下无法phpstorm无法输入中文问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -428,8 +437,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -478,6 +496,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Symfony-Plugin"><span class="nav-number">1.</span> <span class="nav-text">Symfony Plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-annotations"><span class="nav-number">2.</span> <span class="nav-text">php annotations</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
