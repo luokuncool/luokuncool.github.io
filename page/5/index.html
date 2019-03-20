@@ -252,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/ubuntuxia-wu-fa-phpstormwu-fa-shu-ru-zhong-wen-wen-ti/">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -277,8 +277,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/21/ubuntuxia-wu-fa-phpstormwu-fa-shu-ru-zhong-wen-wen-ti/" itemprop="url">
-                  ubuntu下无法phpstorm无法输入中文问题
+                <a class="post-title-link" href="/2016/11/21/no-wireless-on-broadcom-bcm4312-802-11bg-lp-phy/" itemprop="url">
+                  联想g450 ubuntu无法上wifi
                 </a>
               
             
@@ -332,9 +332,11 @@
       
         
           
-            <p>首先在<code>~/.xinitrc</code>里面加入以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br></pre></td></tr></table></figure></p>
-<p>然后在phpstorm.sh的顶部加上以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XMODIFIERS=&quot;@im=fcitx&quot;</span><br><span class="line">export XMODIFIERS</span><br></pre></td></tr></table></figure></p>
-<p>再重启phpstorm就可以输入中文啦</p>
+            <p>Broadcom BCM4312 802.11b/g LP-PHY<br>You only need the missing firmware:<br>Code:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install firmware-b43-lpphy-installer</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>Remove the STA driver and its config, if applicable:<br>Code:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge bcmwl-kernel-source</span><br><span class="line">sudo rm /etc/modprobe.d/blacklist-bcm43.conf</span><br><span class="line">sudo rm /etc/modprobe.d/broadcom-sta-common.conf</span><br><span class="line">sudo rm /etc/modprobe.d/broadcom-sta-dkms.conf</span><br></pre></td></tr></table></figure></p>
+<p>Reboot.</p>
+<p><a href="http://ubuntuforums.org/showthread.php?t=2170117" target="_blank" rel="noopener">http://ubuntuforums.org/showthread.php?t=2170117</a></p>
 
           
         
