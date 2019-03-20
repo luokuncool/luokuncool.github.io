@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
+<meta name="description" content="执行symfony demo的时候得到错误信息cURL error 60: SSL certificate problem: unable to get local issuer certificate解决办法:    把这个http://curl.haxx.se/ca/cacert.pem 连接里面的内容保存到cacert.pem文件。 修改php.ini把curl.cainfo = &amp;quot">
 <meta name="keywords" content="PHP,Symfony">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Symfony创建非共享服务">
-<meta property="og:url" content="https://luokuncool.pw/2016/11/21/symfonychuang-jian-fei-gong-xiang-fu-wu/index.html">
+<meta property="og:title" content="cURL error 60: SSL certificate problem: unable to get local issuer certificate">
+<meta property="og:url" content="https://luokuncool.pw/2016/11/21/curl-error-60/index.html">
 <meta property="og:site_name" content="诚实的小猴子">
-<meta property="og:description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
+<meta property="og:description" content="执行symfony demo的时候得到错误信息cURL error 60: SSL certificate problem: unable to get local issuer certificate解决办法:    把这个http://curl.haxx.se/ca/cacert.pem 连接里面的内容保存到cacert.pem文件。 修改php.ini把curl.cainfo = &amp;quot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T09:24:49.619Z">
+<meta property="og:updated_time" content="2018-03-02T09:24:49.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Symfony创建非共享服务">
-<meta name="twitter:description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
+<meta name="twitter:title" content="cURL error 60: SSL certificate problem: unable to get local issuer certificate">
+<meta name="twitter:description" content="执行symfony demo的时候得到错误信息cURL error 60: SSL certificate problem: unable to get local issuer certificate解决办法:    把这个http://curl.haxx.se/ca/cacert.pem 连接里面的内容保存到cacert.pem文件。 修改php.ini把curl.cainfo = &amp;quot">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/symfonychuang-jian-fei-gong-xiang-fu-wu/"/>
+  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/curl-error-60/"/>
 
 
 <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.css" rel="stylesheet">
@@ -127,7 +127,7 @@
 <link rel="apple-touch-icon" href="/images/icon.png"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 
-  <title> Symfony创建非共享服务 | 诚实的小猴子 </title>
+  <title> cURL error 60: SSL certificate problem: unable to get local issuer certificate | 诚实的小猴子 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/symfonychuang-jian-fei-gong-xiang-fu-wu/">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/curl-error-60/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -279,7 +279,7 @@
             
             
               
-                Symfony创建非共享服务
+                cURL error 60: SSL certificate problem: unable to get local issuer certificate
               
             
           </h1>
@@ -330,9 +330,12 @@
       
 
       
-        <p>在syfmony服务容器中，所有的服务默认都是共享的。<br>也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。<br>要每次都获取新的实例, 只要在services配置文件里面设置 <code>shared</code>为 <code>false</code>就可以了:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app/config/services.yml</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">    <span class="string">app.some_not_shared_service:</span></span><br><span class="line"><span class="attr">        class:</span> <span class="string">...</span></span><br><span class="line"><span class="attr">        shared:</span> <span class="literal">false</span></span><br><span class="line">        <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
-<p>现在不管什么时候，调用<code>$container-&gt;get(&#39;app.some_not_shared_service&#39;)</code>或者注入这个服务，你每次都将获取一个新的实例。</p>
+        <p>执行<code>symfony demo</code>的时候得到错误信息<code>cURL error 60: SSL certificate problem: unable to get local issuer certificate</code><br>解决办法:  </p>
+<ul>
+<li>把这个<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="noopener">http://curl.haxx.se/ca/cacert.pem</a> 连接里面的内容保存到<code>cacert.pem</code>文件。</li>
+<li>修改<code>php.ini</code>把<code>curl.cainfo = &quot;cacert.pem的路径&quot;</code></li>
+<li>再执行<code>symfony demo</code> 问题解决了</li>
+</ul>
 
       
     </div>
@@ -367,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/21/guan-yu-phpji-zhu-zhang-hao-mian-deng-lu-gong-neng/" rel="next" title="关于php记住帐号免登陆功能">
-                <i class="fa fa-chevron-left"></i> 关于php记住帐号免登陆功能
+              <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" rel="next" title="开发symfony应用必备的phpstorm插件">
+                <i class="fa fa-chevron-left"></i> 开发symfony应用必备的phpstorm插件
               </a>
             
           </div>
@@ -377,8 +380,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/21/ubuntu-phpstorm-chinese-input/" rel="prev" title="ubuntu下无法phpstorm无法输入中文问题">
-                ubuntu下无法phpstorm无法输入中文问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/21/symfony-orm-setting/" rel="prev" title="Symfony ORM 相关配置">
+                Symfony ORM 相关配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -63,7 +63,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="PHP,Symfony," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。   其实要实现这个功能其实非常简单，只需要设置session.cookie_lifetime的值就可以了，例如ini_set(&amp;#39;session.cookie_lifetime&amp;#39;, 3600*24*30);可以将PHPSESSID这个cookie有效期保持三">
-<meta name="keywords" content="PHP">
+<meta name="description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
+<meta name="keywords" content="PHP,Symfony">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于php记住帐号免登陆功能">
-<meta property="og:url" content="https://luokuncool.pw/2016/11/21/guan-yu-phpji-zhu-zhang-hao-mian-deng-lu-gong-neng/index.html">
+<meta property="og:title" content="Symfony创建非共享服务">
+<meta property="og:url" content="https://luokuncool.pw/2016/11/21/symfony-dev-plugins/index.html">
 <meta property="og:site_name" content="诚实的小猴子">
-<meta property="og:description" content="之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。   其实要实现这个功能其实非常简单，只需要设置session.cookie_lifetime的值就可以了，例如ini_set(&amp;#39;session.cookie_lifetime&amp;#39;, 3600*24*30);可以将PHPSESSID这个cookie有效期保持三">
+<meta property="og:description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T09:24:49.614Z">
+<meta property="og:updated_time" content="2018-03-02T09:24:49.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于php记住帐号免登陆功能">
-<meta name="twitter:description" content="之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。   其实要实现这个功能其实非常简单，只需要设置session.cookie_lifetime的值就可以了，例如ini_set(&amp;#39;session.cookie_lifetime&amp;#39;, 3600*24*30);可以将PHPSESSID这个cookie有效期保持三">
+<meta name="twitter:title" content="Symfony创建非共享服务">
+<meta name="twitter:description" content="在syfmony服务容器中，所有的服务默认都是共享的。也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。要每次都获取新的实例, 只要在services配置文件里面设置 shared为 false就可以了: 123456# app/config/services.ymlservices:    app.some_not_shar">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/guan-yu-phpji-zhu-zhang-hao-mian-deng-lu-gong-neng/"/>
+  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/symfony-dev-plugins/"/>
 
 
 <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.css" rel="stylesheet">
@@ -127,7 +127,7 @@
 <link rel="apple-touch-icon" href="/images/icon.png"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 
-  <title> 关于php记住帐号免登陆功能 | 诚实的小猴子 </title>
+  <title> Symfony创建非共享服务 | 诚实的小猴子 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/guan-yu-phpji-zhu-zhang-hao-mian-deng-lu-gong-neng/">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/symfony-dev-plugins/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -279,7 +279,7 @@
             
             
               
-                关于php记住帐号免登陆功能
+                Symfony创建非共享服务
               
             
           </h1>
@@ -330,9 +330,9 @@
       
 
       
-        <p>之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。  </p>
-<p>其实要实现这个功能其实非常简单，只需要设置<br><a href="http://php.net/manual/zh/session.configuration.php#ini.session.cookie-lifetime" target="_blank" rel="noopener">session.cookie_lifetime</a>的值就可以了，例如<br><code>ini_set(&#39;session.cookie_lifetime&#39;, 3600*24*30);</code>可以将PHPSESSID这个cookie有效期保持三十天。</p>
-<p><code>session.cookie_lifetime</code>以秒数指定了发送到浏览器的 <code>cookie</code> 的生命周期。值为 0 表示“直到关闭浏览器”。默认为 0。当其设置为0的时候关闭浏览器就过期了，再打开浏览器就需要重新登录。在程序里面用<code>ini_set(&#39;session.cookie_lifetime&#39;, 3600*24*30);</code>设置时间就可以控制登录状态保持的时间了。</p>
+        <p>在syfmony服务容器中，所有的服务默认都是共享的。<br>也就是说每次当你获取服务的时候，你得到的是同一个实例，这是你通常想要的。但是在某些场景下，你可能每次都想获得一个新的实例。<br>要每次都获取新的实例, 只要在services配置文件里面设置 <code>shared</code>为 <code>false</code>就可以了:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app/config/services.yml</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">    <span class="string">app.some_not_shared_service:</span></span><br><span class="line"><span class="attr">        class:</span> <span class="string">...</span></span><br><span class="line"><span class="attr">        shared:</span> <span class="literal">false</span></span><br><span class="line">        <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<p>现在不管什么时候，调用<code>$container-&gt;get(&#39;app.some_not_shared_service&#39;)</code>或者注入这个服务，你每次都将获取一个新的实例。</p>
 
       
     </div>
@@ -358,6 +358,8 @@
           
             <a href="/tags/PHP/" rel="tag"># PHP</a>
           
+            <a href="/tags/Symfony/" rel="tag"># Symfony</a>
+          
         </div>
       
 
@@ -365,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" rel="next" title="开发symfony应用必备的phpstorm插件">
-                <i class="fa fa-chevron-left"></i> 开发symfony应用必备的phpstorm插件
+              <a href="/2016/11/21/ubuntu-phpstorm-chinese-input/" rel="next" title="ubuntu下无法phpstorm无法输入中文问题">
+                <i class="fa fa-chevron-left"></i> ubuntu下无法phpstorm无法输入中文问题
               </a>
             
           </div>
@@ -375,8 +377,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/21/symfonychuang-jian-fei-gong-xiang-fu-wu/" rel="prev" title="Symfony创建非共享服务">
-                Symfony创建非共享服务 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" rel="prev" title="开发symfony应用必备的phpstorm插件">
+                开发symfony应用必备的phpstorm插件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

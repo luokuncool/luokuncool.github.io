@@ -63,7 +63,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,Symfony," />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="执行symfony demo的时候得到错误信息cURL error 60: SSL certificate problem: unable to get local issuer certificate解决办法:    把这个http://curl.haxx.se/ca/cacert.pem 连接里面的内容保存到cacert.pem文件。 修改php.ini把curl.cainfo = &amp;quot">
-<meta name="keywords" content="PHP,Symfony">
+<meta name="description" content="之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。   其实要实现这个功能其实非常简单，只需要设置session.cookie_lifetime的值就可以了，例如ini_set(&amp;#39;session.cookie_lifetime&amp;#39;, 3600*24*30);可以将PHPSESSID这个cookie有效期保持三">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cURL error 60: SSL certificate problem: unable to get local issuer certificate">
-<meta property="og:url" content="https://luokuncool.pw/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/index.html">
+<meta property="og:title" content="关于php记住帐号免登陆功能">
+<meta property="og:url" content="https://luokuncool.pw/2016/11/21/php-remenber-me-login/index.html">
 <meta property="og:site_name" content="诚实的小猴子">
-<meta property="og:description" content="执行symfony demo的时候得到错误信息cURL error 60: SSL certificate problem: unable to get local issuer certificate解决办法:    把这个http://curl.haxx.se/ca/cacert.pem 连接里面的内容保存到cacert.pem文件。 修改php.ini把curl.cainfo = &amp;quot">
+<meta property="og:description" content="之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。   其实要实现这个功能其实非常简单，只需要设置session.cookie_lifetime的值就可以了，例如ini_set(&amp;#39;session.cookie_lifetime&amp;#39;, 3600*24*30);可以将PHPSESSID这个cookie有效期保持三">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T09:24:49.613Z">
+<meta property="og:updated_time" content="2018-03-02T09:24:49.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cURL error 60: SSL certificate problem: unable to get local issuer certificate">
-<meta name="twitter:description" content="执行symfony demo的时候得到错误信息cURL error 60: SSL certificate problem: unable to get local issuer certificate解决办法:    把这个http://curl.haxx.se/ca/cacert.pem 连接里面的内容保存到cacert.pem文件。 修改php.ini把curl.cainfo = &amp;quot">
+<meta name="twitter:title" content="关于php记住帐号免登陆功能">
+<meta name="twitter:description" content="之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。   其实要实现这个功能其实非常简单，只需要设置session.cookie_lifetime的值就可以了，例如ini_set(&amp;#39;session.cookie_lifetime&amp;#39;, 3600*24*30);可以将PHPSESSID这个cookie有效期保持三">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/"/>
+  <link rel="canonical" href="https://luokuncool.pw/2016/11/21/php-remenber-me-login/"/>
 
 
 <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.css" rel="stylesheet">
@@ -127,7 +127,7 @@
 <link rel="apple-touch-icon" href="/images/icon.png"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 
-  <title> cURL error 60: SSL certificate problem: unable to get local issuer certificate | 诚实的小猴子 </title>
+  <title> 关于php记住帐号免登陆功能 | 诚实的小猴子 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/curl-error-60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/">
+  <link itemprop="mainEntityOfPage" href="https://luokuncool.pw/2016/11/21/php-remenber-me-login/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="诚实的小猴子">
@@ -279,7 +279,7 @@
             
             
               
-                cURL error 60: SSL certificate problem: unable to get local issuer certificate
+                关于php记住帐号免登陆功能
               
             
           </h1>
@@ -330,12 +330,9 @@
       
 
       
-        <p>执行<code>symfony demo</code>的时候得到错误信息<code>cURL error 60: SSL certificate problem: unable to get local issuer certificate</code><br>解决办法:  </p>
-<ul>
-<li>把这个<a href="http://curl.haxx.se/ca/cacert.pem" target="_blank" rel="noopener">http://curl.haxx.se/ca/cacert.pem</a> 连接里面的内容保存到<code>cacert.pem</code>文件。</li>
-<li>修改<code>php.ini</code>把<code>curl.cainfo = &quot;cacert.pem的路径&quot;</code></li>
-<li>再执行<code>symfony demo</code> 问题解决了</li>
-</ul>
+        <p>之前一直没有搞明白记住登陆功能问题, 在开发php应用的时候每次关闭浏览器登录状态就失效了，想要做一个一定时间内免登录的功能。  </p>
+<p>其实要实现这个功能其实非常简单，只需要设置<br><a href="http://php.net/manual/zh/session.configuration.php#ini.session.cookie-lifetime" target="_blank" rel="noopener">session.cookie_lifetime</a>的值就可以了，例如<br><code>ini_set(&#39;session.cookie_lifetime&#39;, 3600*24*30);</code>可以将PHPSESSID这个cookie有效期保持三十天。</p>
+<p><code>session.cookie_lifetime</code>以秒数指定了发送到浏览器的 <code>cookie</code> 的生命周期。值为 0 表示“直到关闭浏览器”。默认为 0。当其设置为0的时候关闭浏览器就过期了，再打开浏览器就需要重新登录。在程序里面用<code>ini_set(&#39;session.cookie_lifetime&#39;, 3600*24*30);</code>设置时间就可以控制登录状态保持的时间了。</p>
 
       
     </div>
@@ -361,8 +358,6 @@
           
             <a href="/tags/PHP/" rel="tag"># PHP</a>
           
-            <a href="/tags/Symfony/" rel="tag"># Symfony</a>
-          
         </div>
       
 
@@ -380,8 +375,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/21/kai-fa-symfonyying-yong-bi-bei-de-ji-ge-phpstormcha-jian/" rel="prev" title="开发symfony应用必备的phpstorm插件">
-                开发symfony应用必备的phpstorm插件 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/21/ubuntu-phpstorm-chinese-input/" rel="prev" title="ubuntu下无法phpstorm无法输入中文问题">
+                ubuntu下无法phpstorm无法输入中文问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
